@@ -17,6 +17,11 @@ CREATE TABLE `city` (
   `state` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+BEGIN;
+INSERT INTO `city` VALUES ('1', '中国', '北京', '北京市'), ('2', '中国', '广州', '广东省');
+COMMIT;
+
 ```
 在工程的根目录下，可以看到city.sql。包含结构和数据。
 
