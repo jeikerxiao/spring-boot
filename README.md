@@ -187,7 +187,8 @@ spring.redis.timeout=0
 
 测试用例中使用
 
-```
+```java
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootRedisApplicationTests {
