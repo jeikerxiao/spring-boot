@@ -8,7 +8,8 @@ Spring Boot整合MyBatis项目。
 
 测试数据的SQL脚本：
 
-```
+```sql
+
 CREATE TABLE `city` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country` varchar(255) COLLATE utf8mb4_bin NOT NULL,
@@ -39,7 +40,8 @@ CREATE TABLE `city` (
 
 ### HomeControllerTest:
 
-```
+```java
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class HomeControllerTest {
@@ -66,7 +68,8 @@ public class HomeControllerTest {
 
 ### CityControllerTest:
 
-```
+```java
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CityControllerTest {
