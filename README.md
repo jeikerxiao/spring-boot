@@ -138,4 +138,16 @@ application.properties 中增加druid 数据库连接池配置。
 根据id查询城市信息|GET|http://localhost:8080/citys/{id}|
 根据id修改城市信息|PUT|http://localhost:8080/citys/{id}|
 
+# 4.spring-boot-swagger
+
+Spring Boot 整合 Swagger2。
+
+方法列表如 spring-boot-jpa 项目：
+
+## 运行
+
+swagger接口查看：
+
+- http://localhost:8080/swagger-ui.html
+
 
