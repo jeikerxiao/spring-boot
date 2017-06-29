@@ -328,3 +328,58 @@ spring.data.mongodb.uri=mongodb://root:123456@localhost:27017/mydb
 - http://localhost:8080/movie/all
 
 ![image](images/mongodb.png)
+
+# 7.spring-boot-dubbo
+
+Spring Boot 整合 Dubbo 的Demo.
+
+需要zookeeper。
+
+项目分为两个子项目：
+
+spring-boot-dubbo-server（服务端、生产者）
+
+spring-boot-dubbo-client（客户端、消费者）
+
+项目配置：
+
+## spring-boot-dubbo-server
+
+application.properties
+
+```
+# 避免和 client 工程端口冲突
+server.port=8081
+
+# Dubbo 服务提供者配置
+spring.dubbo.application.name=provider
+spring.dubbo.registry.address=zookeeper://192.168.191.32:2181
+spring.dubbo.protocol.name=dubbo
+spring.dubbo.protocol.port=20880
+spring.dubbo.scan=com.jeiker.demo.dubbo
+
+```
+
+
+## spring-boot-dubbo-client
+
+application.properties
+
+```
+# 避免和 server 工程端口冲突
+server.port=8080
+
+# Dubbo 服务消费者配置
+spring.dubbo.application.name=consumer
+spring.dubbo.registry.address=zookeeper://192.168.191.32:2181
+spring.dubbo.scan=com.jeiker.demo.controller
+
+```
+
+## 运行
+
+执行GET 请求
+
+- http://localhost:8080/city
+
+![image](images/dubbo.png)
