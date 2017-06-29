@@ -335,6 +335,10 @@ Spring Boot 整合 Dubbo 的Demo.
 
 需要zookeeper。
 
+使用了spring-boot-starter-dubbo 
+
+- https://github.com/teaey/spring-boot-starter-dubbo
+
 项目分为两个子项目：
 
 spring-boot-dubbo-server（服务端、生产者）
