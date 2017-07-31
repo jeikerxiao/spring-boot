@@ -50,8 +50,8 @@ public class CodeGenerator {
     public static void genCode(String... tableNames) {
         for (String tableName : tableNames) {
             //根据需求生成，不需要的注掉，模板有问题的话可以自己修改。
-            genModelAndMapper(tableName);
-            genService(tableName);
+//            genModelAndMapper(tableName);
+//            genService(tableName);
             genController(tableName);
         }
     }
