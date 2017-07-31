@@ -6,6 +6,7 @@ package com.jeiker.demo.core;
  * @Date : 17/7/31 下午2:35
  */
 public class ResultGenerator {
+
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
 
     public static Result genSuccessResult() {

@@ -149,8 +149,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             return false;
         }
         List<String> keys = new ArrayList<String>(request.getParameterMap().keySet());
-        keys.remove("sign");//排除sign参数
-        Collections.sort(keys);//排序
+        keys.remove("sign");        //排除sign参数
+        Collections.sort(keys);     //排序
 
         StringBuilder sb = new StringBuilder();
         for (String key : keys) {
@@ -159,7 +159,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         String linkString = sb.toString();
         linkString = StringUtils.substring(linkString, 0, linkString.length() - 1);//去除最后一个'&'
 
-        String secret = "Potato";//密钥，自己修改
+        String secret = "Potato";   //密钥，自己修改
         String sign = DigestUtils.md5Hex(linkString + secret);//混合密钥md5
 
         return StringUtils.equals(sign, requestSign);//比较

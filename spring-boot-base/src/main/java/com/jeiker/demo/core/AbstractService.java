@@ -14,6 +14,7 @@ import java.util.List;
  * @Date : 17/7/31 下午2:34
  */
 public abstract class AbstractService<T> implements Service<T> {
+
     @Autowired
     protected MyMapper<T> mapper;
 
