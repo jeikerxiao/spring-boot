@@ -7,11 +7,11 @@ Configuration:
       # 生产：-Dlog.level.console=warn -Dlog.level.com.sinocare.activity.mapper=info
       - name: log.level.console
         value: trace
-      - name: log.level.com.sinocare.activity.mapper
+      - name: log.level.com.jeiker.demo.dao
         value: trace
       - name: log.path
 #        value: /opt/data/logs  # 生产环境
-        value: /Users/xiao/Documents/2.Work/10.sinocare-hcp/logs  # 本地测试环境
+        value: ./logs  # 本地测试环境
       - name: project.name
         value: spring-boot-base
 
@@ -44,10 +44,10 @@ Configuration:
       AppenderRef:
         - ref: CONSOLE
         - ref: ROLLING_FILE
-    Logger: # 为 com.sinocare.activity.mapper 包配置特殊的Log级别，方便调试 SQL 语句输出
-      - name: logging.level.com.sinocare.activity.mapper
+    Logger: # 为 com.jeiker.demo.dao 包配置特殊的Log级别，方便调试 SQL 语句输出
+      - name: logging.level.com.jeiker.demo.dao
         additivity: false
-        level: ${sys:log.level.com.sinocare.activity.mapper}
+        level: ${sys:log.level.com.jeiker.demo.dao}
         AppenderRef:
           - ref: CONSOLE
           - ref: ROLLING_FILE
