@@ -4,6 +4,7 @@ import com.jeiker.demo.dao.CityMapper;
 import com.jeiker.demo.model.City;
 import com.jeiker.demo.service.CityService;
 import com.jeiker.demo.core.AbstractService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +19,7 @@ import javax.annotation.Resource;
 @Transactional
 public class CityServiceImpl extends AbstractService<City> implements CityService {
 
-    @Resource
+    @Autowired
     private CityMapper cityMapper;
 
 }

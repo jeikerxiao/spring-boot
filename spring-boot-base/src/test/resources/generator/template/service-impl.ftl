@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 @Transactional
 public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service {
 
-    @Resource
+    @Autowired
     private ${modelNameUpperCamel}Mapper ${modelNameLowerCamel}Mapper;
 
 }

@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("${baseRequestMapping}")
 public class ${modelNameUpperCamel}Controller {
 
-    @Resource
+    @Autowired
     private ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
 
     @PostMapping("/add")

@@ -7,6 +7,7 @@ import com.jeiker.demo.model.vo.PageInfoVo;
 import com.jeiker.demo.service.CityService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ import java.util.List;
 @RequestMapping("/city")
 public class CityController {
 
-    @Resource
+    @Autowired
     private CityService cityService;
 
     @PostMapping("/add")
