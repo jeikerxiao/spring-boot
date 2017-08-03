@@ -41,6 +41,7 @@ public class HomeControllerTest {
                 .andExpect(content().string(containsString("Hello World")))
                 // 检查在根目录下有一个名为name的节点，并且该节点对应的值是“Hello World”
                 .andExpect(jsonPath("$.message").value("Hello World"))
+                // 生成文件目录名称:home
                 .andDo(document("home"));
     }
 }
