@@ -154,7 +154,7 @@ swagger接口查看：
 
 pom.xml文件中引入redis:
 
-```
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-data-redis</artifactId>
@@ -163,7 +163,7 @@ pom.xml文件中引入redis:
 
 application.properties文件中配置redis:
 
-```
+```java
 # REDIS (RedisProperties)
 # Redis数据库索引（默认为0）
 spring.redis.database=0
@@ -209,7 +209,7 @@ public class SpringBootRedisApplicationTests {
 
 本地启动redis:
 
-```
+```shell
 redis-server
 ```
 
@@ -232,25 +232,25 @@ Spring Boot 配合 RabbitMQ。
 
 Mac下安装
 
-```
+```shell
 brew install rabbitmq
 ```
 
 安装目录：
 
-```
+```shell
 /usr/local/sbin
 ```
 
 启动：
 
-```
+```shell
 rabbitmq-server
 ```
 
 开启Web管理插件
 
-```
+```shell
 rabbitmq-plugins enable rabbitmq_management
 ```
 
@@ -265,7 +265,7 @@ http://localhost:15672/
 
 application.properties文件中配置rabbitmq:
 
-```
+```java
 # rabbitmq configuration
 spring.application.name=rabbitmq-test
 
@@ -316,7 +316,7 @@ Spring Boot 整合 Mongodb
 
 application.properties文件中配置 mongodb:
 
-```
+```java
 spring.data.mongodb.uri=mongodb://root:123456@localhost:27017/mydb
 
 ```
@@ -351,7 +351,7 @@ spring-boot-dubbo-client（客户端、消费者）
 
 application.properties
 
-```
+```java
 # 避免和 client 工程端口冲突
 server.port=8081
 
@@ -369,7 +369,7 @@ spring.dubbo.scan=com.jeiker.demo.dubbo
 
 application.properties
 
-```
+```java
 # 避免和 server 工程端口冲突
 server.port=8080
 
@@ -406,7 +406,7 @@ Spring Boot 整合 Elasticsearch 。
 
 application.properties
 
-```
+```java
 # Elasticsearch
 spring.data.elasticsearch.repositories.enabled = true
 # 默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口。
@@ -420,7 +420,7 @@ spring.data.elasticsearch.cluster-nodes = 192.168.191.32:9300
 - POST 
 - http://localhost:8080/city
 
-```
+```json
 {	
 	"id":2,
 	"name":"长沙",
@@ -434,7 +434,7 @@ spring.data.elasticsearch.cluster-nodes = 192.168.191.32:9300
 - GET
 - http://localhost:8080/city/search?pageNumber=0&pageSize=10&searchContent=深圳
 
-```
+```json
 [
     {
         "id": 1,
@@ -453,7 +453,7 @@ spring.data.elasticsearch.cluster-nodes = 192.168.191.32:9300
 
 查看控制台日志输出：
 
-```
+```json
 {
   "function_score" : {
     "functions" : [ {
@@ -532,7 +532,7 @@ resources下的 `user_info.sql` 数据库表及测试数据。
 
 ## pom.xml依赖
 
-```
+```xml
 <dependencies>
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
@@ -554,7 +554,7 @@ resources下的 `user_info.sql` 数据库表及测试数据。
 
 pom.xml插件
 
-```
+```xml
 <plugins>
 
 	<plugin>
@@ -597,7 +597,7 @@ pom.xml插件
 
 ## 单元测试类
 
-```
+```java
 // 提供Spring测试上下文
 @RunWith(SpringRunner.class)
 @WebMvcTest(HomeController.class)
@@ -662,7 +662,7 @@ include::{snippets}/home/http-response.adoc[]
 这时只需要通过maven 打包命令就可以生成文档了：
 
 
-```
+```shell
 $ mvn package
 ```
 
