@@ -25,11 +25,10 @@ public class JsonWebTokenUtility {
     private Key secretKey;                          // 密钥
 
     public JsonWebTokenUtility() {
-
         // 这里不是真正安全的实践
         // 为了简单,存储一个静态key在这里
         signatureAlgorithm = SignatureAlgorithm.HS512;
-        String encodedKey = "adsfjasfui89qwer798qwerjkqwlj12934719!@#$!@#$1234!@#$!dsklfaj";
+        String encodedKey = "L7A/6zARSkK1j7Vd5SDD9pSSqZlqF7mAhiOgRbgv9Smce6tf4cJnvKOjtKPxNNnWQj+2lQEScm3XIUjhW+YVZg==";
         secretKey = deserializeKey(encodedKey);
     }
 
