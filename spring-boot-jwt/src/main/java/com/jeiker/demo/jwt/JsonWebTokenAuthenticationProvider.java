@@ -40,6 +40,9 @@ public class JsonWebTokenAuthenticationProvider implements AuthenticationProvide
         return authenticationUser;
     }
 
+    /**
+     * 将 JWT-token 解析成 spring-security 的用户对象
+     */
     private UserDetails parseToken(String tokenHeader) {
         UserDetails principal = null;
         AuthTokenDetails authTokenDetails = tokenService.parseAndValidate(tokenHeader);

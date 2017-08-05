@@ -39,9 +39,8 @@ public class UserController {
             authTokenDetails.setId(user.getId());
             authTokenDetails.setUsername(user.getUsername());
             authTokenDetails.setExpirationDate(buildExpirationDate());
-            // TODO: 2016/12/8 这里要查询用户拥有的角色，会结合JWT和Spring Security进行验证。
+            // 这里要查询用户拥有的角色，会结合JWT和Spring Security进行验证。
             authTokenDetails.setRoleNames(Collections.singletonList("admin"));
-
             // 创建token
             String jwt = tokenService.createJsonWebToken(authTokenDetails);
             if (jwt != null) {
