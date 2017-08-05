@@ -15,13 +15,16 @@ import org.springframework.stereotype.Component;
 public class JsonWebTokenAuthenticationFilter extends RequestHeaderAuthenticationFilter {
 
     public JsonWebTokenAuthenticationFilter() {
-        // Don't throw exceptions if the header is missing
+        // 当 header 头没有信息时,不抛异常
         this.setExceptionIfHeaderMissing(false);
 
-        // This is the request header it will look for
+        // 查找 header 中的认证信息
         this.setPrincipalRequestHeader("Authorization");
     }
 
+    /**
+     * 设置认证管理器
+     */
     @Override
     @Autowired
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {
