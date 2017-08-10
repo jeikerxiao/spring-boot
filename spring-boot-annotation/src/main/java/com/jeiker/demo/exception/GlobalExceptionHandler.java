@@ -19,7 +19,6 @@ public class GlobalExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-
     @ExceptionHandler(RequestLimitException.class)
     public Map exceptionHandler(RuntimeException e, HttpServletResponse response) {
         Map<String, String> result = new HashMap<>();
