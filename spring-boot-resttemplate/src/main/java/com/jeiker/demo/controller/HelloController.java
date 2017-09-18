@@ -19,7 +19,6 @@ public class HelloController {
 
     /**
      * restTemplate 方式远程调用 服务端接口，消费服务
-     * @return
      */
     @GetMapping("/hello")
     public String hello() {
