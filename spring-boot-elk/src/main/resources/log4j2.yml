@@ -10,7 +10,7 @@ Configuration:
       - name: log.level.com.jeiker.demo
         value: trace
       - name: log.path
-        value: ./opt/logs
+        value: ./logs
       - name: project.name
         value: spring-boot-elk
 
