@@ -24,16 +24,19 @@ Configuration:
         onMismatch: DENY
       PatternLayout:
         pattern: "%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p [%40.40c{1.}:%3L] - %m%n}{FATAL=white, ERROR=red, WARN=blue, INFO=Green, DEBUG=Yellow, TRACE=blue}"
-    RollingFile: # 输出到文件，超过128MB归档
+    RollingFile: # 输出到文件, 按日期进行归档
       - name: ROLLING_FILE
         ignoreExceptions: false
         fileName: ${log.path}/${project.name}.log
-        filePattern: "${log.path}/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}.log"
         PatternLayout:
           pattern: "%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p [%40.40c{1.}:%3L] - %m%n}{FATAL=white, ERROR=red, WARN=blue, INFO=Green, DEBUG=Yellow, TRACE=blue}"
         Policies:
-          SizeBasedTriggeringPolicy:
-            size: "128 MB"
+#          SizeBasedTriggeringPolicy:
+#            size: "128 MB"
+          TimeBasedTriggeringPolicy:
+            interval: 1
+            modulate: true
         DefaultRolloverStrategy:
           max: 1000
 
