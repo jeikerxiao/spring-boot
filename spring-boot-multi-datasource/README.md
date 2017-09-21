@@ -668,7 +668,7 @@ $ mvn package
 
 在/target/generated-docs下有个index.html，打开这个html,显示如下:
 
-![image](images/restdoc.png)
+![image](../images/restdoc.png)
 
 # 11.spring-boot-jwt
 
@@ -688,9 +688,9 @@ JWT是 Json Web Token 的缩写。
 
 ### 登录
 
-![image](images/jwt1.png)
+![image](../images/jwt1.png)
 
 
 ### 获取用户信息
 
-![image](images/jwt2.png)
+![image](../images/jwt2.png)
