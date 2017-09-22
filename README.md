@@ -19,20 +19,20 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 # 2.数据访问
 
-* [spring-boot-mybatis](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-mybatis)
-* [spring-boot-druid](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-druid)
-* [spring-boot-jpa](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-jpa)
-* [spring-boot-redis](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-redis)
-* [spring-boot-mongodb](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-mongodb)
-* [spring-boot-elasticsearch](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-elasticsearch)
+* [spring-boot-mybatis](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-mybatis)：使用 MyBatis 连接数据库
+* [spring-boot-druid](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-druid)：整合 Druid 作数据库连接池
+* [spring-boot-jpa](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-jpa)：使用 Jpa 连接数据库
+* [spring-boot-redis](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-redis)：使用 Redis 缓存
+* [spring-boot-mongodb](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-mongodb)：使用非关系型数据库 MongoDB
+* [spring-boot-elasticsearch](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-elasticsearch)：使用 Elasticsearch 搜索服务器
 
 # 3.数据安全
 
-* [spring-boot-jwt](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-jwt)
+* [spring-boot-jwt](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-jwt)：JSON Web Tokens 接口认证
 
 # 4.消息服务
 
-* [spring-boot-ramq](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-ramq)
+* [spring-boot-ramq](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-ramq)：使用 RabbitMQ 消息队列服务
 
 
 # 5.项目框架
