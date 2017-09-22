@@ -1,4 +1,4 @@
-![image](images/springboot-logo.jepg)
+![image](images/springboot-logo.jpeg)
 
 # Spring Boot Study
 
@@ -6,7 +6,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 这是一个 Spring Boot 的Demo学习型项目。
 
-![image](images/springboot-spring.jepg)
+![image](images/springboot-spring.jpeg)
 
 # 1.Web开发
 
