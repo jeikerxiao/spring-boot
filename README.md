@@ -1,4 +1,3 @@
-![image](images/springboot-logo.jpeg)
 
 # Spring Boot Study
 
