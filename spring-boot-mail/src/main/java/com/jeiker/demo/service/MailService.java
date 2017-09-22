@@ -7,7 +7,7 @@ package com.jeiker.demo.service;
 public interface MailService {
 
     /**
-     * 发送简单邮件
+     * 发送简单的邮件
      * @param to 发送地址
      * @param subject 邮件主题
      * @param content 邮件内容
@@ -15,7 +15,7 @@ public interface MailService {
     void sendSimpleMail(String to, String subject, String content);
 
     /**
-     * 发送简单邮件
+     * 发送HTML格式的邮件
      * @param to 发送地址
      * @param subject 邮件主题
      * @param content 邮件内容
@@ -23,7 +23,7 @@ public interface MailService {
     void sendHtmlMail(String to, String subject, String content);
 
     /**
-     * 发送简单邮件
+     * 发送带附件的邮件
      * @param to 发送地址
      * @param subject 邮件主题
      * @param content 邮件内容

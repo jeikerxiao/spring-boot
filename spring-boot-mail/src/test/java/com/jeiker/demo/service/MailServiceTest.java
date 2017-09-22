@@ -21,11 +21,19 @@ public class MailServiceTest {
     @Autowired
     private TemplateEngine templateEngine;
 
+    /**
+     * 测试 发送简单邮件
+     * @throws Exception
+     */
     @Test
     public void sendSimpleMail() throws Exception {
         mailService.sendSimpleMail("jeiker@126.com", "test mail", "this a test e-mail from spring boot.");
     }
 
+    /**
+     * 测试 发送HTML的邮件
+     * @throws Exception
+     */
     @Test
     public void sendHtmlMail() throws Exception {
         String content = "<html>\n" +
@@ -36,6 +44,10 @@ public class MailServiceTest {
         mailService.sendHtmlMail("jeiker@126.com", "test mail", content);
     }
 
+    /**
+     * 测试 发送带附件的邮件
+     * @throws Exception
+     */
     @Test
     public void sendInlineResourceMail() throws Exception {
         String rscId = "head007";
@@ -44,6 +56,9 @@ public class MailServiceTest {
         mailService.sendInlineResourceMail("jeiker@126.com", "test mail", content, imgPath, rscId);
     }
 
+    /**
+     * 测试 使用模板发送邮件
+     */
     @Test
     public void sendTemplateMail() {
         //创建邮件正文
