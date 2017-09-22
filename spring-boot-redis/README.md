@@ -69,4 +69,4 @@ redis-server
 
 查看Redis Server里的数据：（这里使用redis界面工具）
 
-![image](images/redis.png)
+![image](../images/redis.png)
