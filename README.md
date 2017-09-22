@@ -9,8 +9,9 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 # 1.Web开发
 
-* [spring-boot-swagger](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-swagger)
-* [spring-boot-restdoc](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-restdoc)
+* [spring-boot-swagger](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-swagger)：在线API文档
+* [spring-boot-restdoc](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-restdoc)：API文档生成
+* [spring-boot-actuator](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-actuator)：应用监控
 
 
 # 2.数据访问
