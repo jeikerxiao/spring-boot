@@ -35,6 +35,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 # 5.项目框架
 
-* [spring-boot-ssm](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-ssm)
-* [spring-boot-dubbo](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-dubbo)
+* [spring-boot-ssm](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-ssm)：整合 MyBatis
+* [spring-boot-base](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-base)：基础工程项目
+* [spring-boot-dubbo](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-dubbo)：整合 Dubbo
 
