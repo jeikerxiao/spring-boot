@@ -1,0 +1,17 @@
+<Configuration>
+    <Appenders>
+        <Console name="Stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p [%40.40c{1.}:%3L] - %m%n"/>
+        </Console>
+        <Socket name="Socket" host="localhost" port="4560">
+            <JsonLayout compact="true" eventEol="true" />
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p [%40.40c{1.}:%3L] - %m%n"/>
+        </Socket>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Stdout"/>
+            <AppenderRef ref="Socket"/>
+        </Root>
+    </Loggers>
+</Configuration>
