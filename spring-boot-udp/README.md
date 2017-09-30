@@ -12,7 +12,7 @@
 * Redis
 * MySQL
 
-##pom.xml
+## pom.xml
 
 ```xml
 <dependency>
@@ -65,7 +65,7 @@
 </dependency>
 ```
 
-##application.properties
+## application.properties
 
 ```properties
 spring.messages.encoding=utf-8
@@ -107,7 +107,7 @@ sysfig.keepAliveSeconds = 100
 sysfig.queueCapacity = 1000
 ```
 
-##启动
+## 启动
 
 1. 先运行 Spring Boot 项目。
 2. 再运行测试用的Client main（）方法。
