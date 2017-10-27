@@ -33,6 +33,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 # 4.消息服务
 
 * [spring-boot-ramq](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-ramq)：使用 RabbitMQ 消息队列服务
+* [spring-boot-kafka](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-kafka)：使用 Kafka 消息队列服务
 
 
 # 5.项目框架
