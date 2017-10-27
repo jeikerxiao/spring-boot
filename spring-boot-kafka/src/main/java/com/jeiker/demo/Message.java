@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author : xiao
  * @date : 17/10/26 下午5:20
- * @description :
+ * @description : 消息体
  */
 public class Message {
 

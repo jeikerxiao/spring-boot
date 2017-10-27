@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * @author : xiao
  * @date : 17/10/26 下午5:21
- * @description :
+ * @description : 消息发送者
  */
 @Component
 public class Sender {
@@ -23,10 +23,10 @@ public class Sender {
     private Gson gson = new GsonBuilder().create();
 
     public void sendMessage(){
-        Message m = new Message();
-        m.setId(System.currentTimeMillis());
-        m.setMsg(UUID.randomUUID().toString());
-        m.setSendTime(new Date());
-        kafkaTemplate.send("test1", gson.toJson(m));
+        Message message = new Message();
+        message.setId(System.currentTimeMillis());
+        message.setMsg(UUID.randomUUID().toString());
+        message.setSendTime(new Date());
+        kafkaTemplate.send("test_topic", gson.toJson(message));
     }
 }

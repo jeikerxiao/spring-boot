@@ -14,7 +14,7 @@ public class SpringBootKafkaApplication {
 		while(true){
 			Sender sender = app.getBean(Sender.class);
 			sender.sendMessage();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 		}
 	}
 }

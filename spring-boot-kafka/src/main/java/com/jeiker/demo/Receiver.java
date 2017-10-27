@@ -11,7 +11,7 @@ import com.google.gson.GsonBuilder;
 /**
  * @author : xiao
  * @date : 17/10/26 下午5:22
- * @description :
+ * @description : 消息接收者
  */
 @Component
 public class Receiver {
@@ -20,9 +20,9 @@ public class Receiver {
 
     private Gson gson = new GsonBuilder().create();
 
-    @KafkaListener(topics = "test1")
+    @KafkaListener(topics = "test_topic")
     public void processMessage(String content) {
-        Message m = gson.fromJson(content, Message.class);
-        logger.info("====> get message: {}", m.getMsg());
+        Message message = gson.fromJson(content, Message.class);
+        logger.info("====> get message: {}", message.getMsg());
     }
 }
