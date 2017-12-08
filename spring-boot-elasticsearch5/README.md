@@ -34,7 +34,7 @@ Elasticsearch配置类，
 
 ElasticsearchConfig.java
 
-```
+```java
 @Configuration
 public class ElasticsearchConfig {
 
