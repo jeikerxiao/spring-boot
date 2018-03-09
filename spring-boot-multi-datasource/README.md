@@ -20,6 +20,40 @@ Spring Boot使用多数据源的例子。
 
 可运行单元测试 UserControllerTest
 
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserControllerTest {
+
+    @Autowired
+    private WebApplicationContext wac;
+
+    private MockMvc mockMvc;
+
+    @Before
+    public void setUp() throws Exception {
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    }
+
+    @Test
+    public void test1() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/user/test1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print())
+                .andReturn();
+    }
+
+    @Test
+    public void test2() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/user/test2").accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print())
+                .andReturn();
+    }
+
+}
+```
+
 或直接访问接口：
 
 * GET http://localhost:8080/user/test1 主库
