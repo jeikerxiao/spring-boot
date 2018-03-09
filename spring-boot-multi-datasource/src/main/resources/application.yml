@@ -1,0 +1,21 @@
+## 多数据源
+datasource:
+  # 主库
+  master:
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  # 从库
+  slave:
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+## mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.jeiker.demo.model
+  check-config-location: true
+  config-location: classpath:mybatis-config.xml
