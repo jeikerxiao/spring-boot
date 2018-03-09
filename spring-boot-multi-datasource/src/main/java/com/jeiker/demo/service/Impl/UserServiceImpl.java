@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * @author : xiao
  * @date : 2018/3/9 上午11:00
- * @description :
+ * @description : 用户服务类实现，注意注解使用
  */
 @Service
 public class UserServiceImpl implements UserService {
