@@ -1,4 +1,3 @@
-
 # spring-boot-mail
 
 使用 spring-boot 发送邮件。
