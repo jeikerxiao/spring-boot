@@ -141,7 +141,7 @@ public class FileController {
 
 
 |请求|地址|说明
-|---|---|---|---
+|---|---|---
 |POST|http://localhost:8080/file/upload|单文件上传
 |POST|http://localhost:8080/file/uploads|多文件上传
 |GET|http://localhost:8080/file/download|文件下载
