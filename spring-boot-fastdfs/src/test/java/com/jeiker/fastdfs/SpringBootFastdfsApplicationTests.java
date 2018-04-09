@@ -1,4 +1,4 @@
-package com.jeiker.springbootfastdfs;
+package com.jeiker.fastdfs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
