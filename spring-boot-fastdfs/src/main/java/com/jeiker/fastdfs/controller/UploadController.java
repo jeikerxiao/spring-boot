@@ -37,7 +37,7 @@ public class UploadController {
             return "redirect:uploadStatus";
         }
         try {
-            String path = "";
+            String path = saveFile(file);
             redirectAttributes.addFlashAttribute("message", "You successfully uploaded '"
                     + file.getOriginalFilename() + "'");
             redirectAttributes.addFlashAttribute("path", "file path url '" + path + "'");
