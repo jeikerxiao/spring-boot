@@ -25,6 +25,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 * [spring-boot-redis](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-redis)：使用 Redis 缓存
 * [spring-boot-mongodb](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-mongodb)：使用非关系型数据库 MongoDB
 * [spring-boot-elasticsearch](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-elasticsearch)：使用 Elasticsearch 搜索服务器
+* [spring-boot-fastdfs](https://github.com/jeikerxiao/SpringBootStudy/tree/master/spring-boot-fastdfs)：使用 FastDFS 分布式文件系统
 
 # 3.数据安全
 
