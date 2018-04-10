@@ -1,5 +1,6 @@
 package com.jeiker.fastdfs.fastdfs;
 
+import com.jeiker.fastdfs.model.FastDFSFile;
 import org.csource.common.NameValuePair;
 import org.csource.fastdfs.*;
 import org.slf4j.Logger;
@@ -10,7 +11,7 @@ import java.io.IOException;
 
 public class FastDFSClient {
 
-    public static final Logger logger = LoggerFactory.getLogger(FastDFSClient.class);
+    private static final Logger logger = LoggerFactory.getLogger(FastDFSClient.class);
 
     private static TrackerClient trackerClient;
     private static TrackerServer trackerServer;

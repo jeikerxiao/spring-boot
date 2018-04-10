@@ -1,4 +1,4 @@
-package com.jeiker.fastdfs.fastdfs;
+package com.jeiker.fastdfs.model;
 
 import java.util.Arrays;
 
