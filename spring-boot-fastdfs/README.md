@@ -1,16 +1,62 @@
-package com.jeiker.fastdfs.controller;
+# spring-boot-fastdfs
 
-import com.jeiker.fastdfs.service.FileService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+使用 Spring Boot 整合FastDFS进行文件上传，下载。
 
+## 环境
+
+先得需要安装搭建好FastDFS环境。
+
+* Spring Boot 2.0.1.RELEASE
+* IntelliJ IDEA 2017.3
+* fastdfs-client-java 1.27-SNAPSHOT (需要自己构建工程构建)
+
+
+## 依赖
+
+使用 thymeleaf 模板展示界面，使用界面上传文件演示。
+
+使用 fastdfs-client-java 客户端依赖API。
+
+pom.xml
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>org.csource</groupId>
+	<artifactId>fastdfs-client-java</artifactId>
+	<version>1.27-SNAPSHOT</version>
+</dependency>
+```
+
+## 配置
+
+application.properties 
+
+设置文件大小限制。
+
+Spring Boot 2.0以后使用与之前有所不同：
+
+Spring Boot 2.0以前：
+
+```java
+spring.http.multipart.maxFileSize=10Mb
+spring.http.multipart.maxRequestSize=10Mb
+```
+
+Spring Boot 2.0以后：
+
+```java
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+```
+
+测试用例中使用
+
+```java
 @Controller
 public class UploadController {
 
@@ -62,3 +108,18 @@ public class UploadController {
     }
 
 }
+
+```
+
+
+## 运行
+
+浏览器访问：
+
+http://localhost:8080/
+
+可在这个界面进行上传
+
+上传成功后会跳转入状态界面，显示上传成功后的资源地址，可直接使用地址访问资源。
+
+
