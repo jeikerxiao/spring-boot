@@ -2,9 +2,6 @@ package com.jeiker.demo.model;
 
 /**
  * 用户信息
- *
- * @author liuzh
- * @since 2016-01-31 21:39
  */
 public class UserInfo extends BaseEntity {
 
