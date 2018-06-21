@@ -29,7 +29,7 @@ public class CityController {
 
     @PostMapping("/add")
     public Result add(@RequestBody City city) {
-        cityService.save(city);
+        cityService.insert(city);
         return ResultGenerator.genSuccessResult();
     }
 
@@ -41,7 +41,7 @@ public class CityController {
 
     @PostMapping("/update")
     public Result update(@RequestBody City city) {
-        cityService.update(city);
+        cityService.updateCity(city);
         return ResultGenerator.genSuccessResult();
     }
 

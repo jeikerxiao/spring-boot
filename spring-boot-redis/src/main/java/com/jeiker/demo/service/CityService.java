@@ -3,6 +3,8 @@ package com.jeiker.demo.service;
 import com.jeiker.demo.core.Service;
 import com.jeiker.demo.model.City;
 
+import java.util.List;
+
 
 /**
  * @Author : xiao
@@ -10,4 +12,15 @@ import com.jeiker.demo.model.City;
  */
 public interface CityService extends Service<City> {
 
+    City insert(City city);
+
+    City updateCity(City city);
+
+    City findById(String id);
+
+    List<City> findAll();
+
+    void deleteById(String id);
+
+    void deleteAll();
 }
