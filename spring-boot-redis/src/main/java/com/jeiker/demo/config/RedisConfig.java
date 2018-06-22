@@ -12,7 +12,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
@@ -26,7 +25,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     public CacheManager cacheManager(@SuppressWarnings("rawtypes") RedisTemplate redisTemplate) {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         // 设置缓存过期时间 (秒)
-        cacheManager.setDefaultExpiration(10000);
+        cacheManager.setDefaultExpiration(2 * 60);
         return cacheManager;
     }
 
@@ -40,20 +39,24 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     // json 序列化定义
     private void setJsonSerializer(StringRedisTemplate template) {
+
+        // 定义 key 的序列化方式为 string
+        // Long类型会出现异常信息;需要我们上面的自定义key生成策略，一般没必要
+        // 需要注意这里Key使用了 StringRedisSerializer，那么Key只能是String类型的，不能为Long，Integer，否则会报错抛异常。
+        // 就是假如 PostRepository 里定义的 @Cacheable(key="#p0") 的话就会报错，因为这样作为key的是int型，key必须为String。
+        StringRedisSerializer redisSerializer = new StringRedisSerializer();
+//        JdkSerializationRedisSerializer redisSerializer = new JdkSerializationRedisSerializer();
+        template.setKeySerializer(redisSerializer);
+        template.setHashKeySerializer(redisSerializer);
+
+        // 定义 value 的序列化方式为 json
         @SuppressWarnings({"rawtypes", "unchecked"})
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jackson2JsonRedisSerializer.setObjectMapper(om);
 
-        // 定义 key 的序列化方式
-        // Long类型会出现异常信息;需要我们上面的自定义key生成策略，一般没必要
-        RedisSerializer<String> redisSerializer = new StringRedisSerializer();
-        template.setKeySerializer(redisSerializer);
-
-        // 定义 value 的序列化方式为 json
         template.setValueSerializer(jackson2JsonRedisSerializer);
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
 

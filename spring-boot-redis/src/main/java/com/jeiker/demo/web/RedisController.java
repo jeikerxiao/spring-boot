@@ -26,14 +26,14 @@ public class RedisController {
         city.setCountry("国家");
         city.setName("城市名");
         city.setState("省");
-        //这里用于测试，key值可以自定义实现
+        // 这里用于测试，key 值可以自定义实现
         redisService.set("city:4321", city);
         return ResultGenerator.genSuccessResult(city);
     }
 
     @RequestMapping("/get")
     public Result get() {
-        //这里用于测试，key值可以自定义实现
+        // 这里用于测试，key 值可以自定义实现
         City city = (City) redisService.get("city:4312");
         return ResultGenerator.genSuccessResult(city);
     }
