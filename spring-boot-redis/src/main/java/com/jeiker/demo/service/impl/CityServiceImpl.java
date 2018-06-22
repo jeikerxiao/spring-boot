@@ -32,8 +32,8 @@ public class CityServiceImpl extends AbstractService<City> implements CityServic
     private CityMapper cityMapper;
 
     // 因为必须要有返回值，才能保存到数据库中，如果保存的对象的某些字段是需要数据库生成的，
-    //那保存对象进数据库的时候，就没必要放到缓存了
-    //必须要有返回值，否则没数据放到缓存中
+    // 那保存对象进数据库的时候，就没必要放到缓存了
+    // 必须要有返回值，否则没数据放到缓存中
     @CachePut(key="'cityId:' + #p0.id")  //#p0表示第一个参数
     public City insert(City city){
         cityMapper.insert(city);
@@ -59,13 +59,13 @@ public class CityServiceImpl extends AbstractService<City> implements CityServic
         return cityMapper.selectAll();
     }
 
-    //删除缓存名称为 userCache ,key等于指定的id对应的缓存
+    // 删除缓存名称为 userCache ,key等于指定的id对应的缓存
     @CacheEvict(key="'cityId:' + #p0")
     public void delete(Integer id){
         cityMapper.deleteByPrimaryKey(id);
     }
 
-    //清空缓存名称为userCache（看类名上的注解)下的所有缓存
+    // 清空缓存名称为 userCache（看类名上的注解)下的所有缓存
     //如果数据失败了，缓存时不会清除的
     @CacheEvict(allEntries = true)
     public void deleteAll(){

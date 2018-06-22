@@ -19,8 +19,6 @@ public class City implements Serializable{
 
     private String state;
 
-    public City() {
-    }
 
     /**
      * @return id
@@ -78,13 +76,4 @@ public class City implements Serializable{
         this.state = state;
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "id=" + id +
-                ", country='" + country + '\'' +
-                ", name='" + name + '\'' +
-                ", state='" + state + '\'' +
-                '}';
-    }
 }

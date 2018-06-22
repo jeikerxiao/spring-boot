@@ -58,4 +58,10 @@ public class CityController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+    @PostMapping("/deleteAll")
+    public Result delete() {
+        cityService.deleteAll();
+        return ResultGenerator.genSuccessResult();
+    }
 }
