@@ -6,6 +6,9 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 public class City implements Serializable{
+
+    private static final long serialVersionUID = 3198216694406487963L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -70,5 +73,15 @@ public class City implements Serializable{
      */
     public void setState(String state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", country='" + country + '\'' +
+                ", name='" + name + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 }
