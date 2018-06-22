@@ -19,6 +19,9 @@ public class City implements Serializable{
 
     private String state;
 
+    public City() {
+    }
+
     /**
      * @return id
      */

@@ -45,6 +45,12 @@ public class RedisConfig extends CachingConfigurerSupport {
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jackson2JsonRedisSerializer.setObjectMapper(om);
+
+        // 定义key序列化方式
+        // Long类型会出现异常信息;需要我们上面的自定义key生成策略，一般没必要
+//        RedisSerializer<String> redisSerializer = new StringRedisSerializer();
+//        template.setKeySerializer(redisSerializer);
+
         // 设置value 的序列化方式为 json
         template.setValueSerializer(jackson2JsonRedisSerializer);
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
