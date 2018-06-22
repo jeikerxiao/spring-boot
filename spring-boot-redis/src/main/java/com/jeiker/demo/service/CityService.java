@@ -20,7 +20,7 @@ public interface CityService extends Service<City> {
 
     List<City> findAll();
 
-    void deleteById(String id);
+    void delete(Integer id);
 
     void deleteAll();
 }

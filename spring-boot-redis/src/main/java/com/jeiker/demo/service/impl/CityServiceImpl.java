@@ -61,7 +61,7 @@ public class CityServiceImpl extends AbstractService<City> implements CityServic
 
     //删除缓存名称为 userCache ,key等于指定的id对应的缓存
     @CacheEvict(key="#p0")
-    public void deleteById(String id){
+    public void delete(Integer id){
         cityMapper.deleteByPrimaryKey(id);
     }
 

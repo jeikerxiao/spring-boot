@@ -35,7 +35,7 @@ public class CityController {
 
     @PostMapping("/delete")
     public Result delete(@RequestBody IdVo idVo) {
-        cityService.deleteById(idVo.getId());
+        cityService.delete(idVo.getId());
         return ResultGenerator.genSuccessResult();
     }
 
