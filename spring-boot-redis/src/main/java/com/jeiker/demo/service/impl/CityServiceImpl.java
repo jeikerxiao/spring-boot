@@ -4,6 +4,8 @@ import com.jeiker.demo.core.AbstractService;
 import com.jeiker.demo.dao.CityMapper;
 import com.jeiker.demo.model.City;
 import com.jeiker.demo.service.CityService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -24,13 +26,15 @@ import java.util.List;
 @Transactional
 public class CityServiceImpl extends AbstractService<City> implements CityService {
 
+    private Logger log = LoggerFactory.getLogger(CityServiceImpl.class);
+
     @Autowired
     private CityMapper cityMapper;
 
     // 因为必须要有返回值，才能保存到数据库中，如果保存的对象的某些字段是需要数据库生成的，
     //那保存对象进数据库的时候，就没必要放到缓存了
-    @CachePut(key="#p0.id")  //#p0表示第一个参数
     //必须要有返回值，否则没数据放到缓存中
+    @CachePut(key="#p0.id")  //#p0表示第一个参数
     public City insert(City city){
         cityMapper.insert(city);
         //u对象中可能只有只几个有效字段，其他字段值靠数据库生成，比如id
@@ -44,9 +48,10 @@ public class CityServiceImpl extends AbstractService<City> implements CityServic
         return cityMapper.selectByPrimaryKey(city.getId());
     }
 
-    @Cacheable(key="#p0") // @Cacheable 会先查询缓存，如果缓存中存在，则不执行方法
-    public City findById(String id){
-        System.err.println("根据id=" + id +"获取用户对象，从数据库中获取");
+    // @Cacheable 会先查询缓存，如果缓存中存在，则不执行方法
+    @Cacheable(key="#p0")
+    public City find(Integer id){
+        log.info("根据id=" + id +"获取用户对象，从数据库中获取");
         return cityMapper.selectByPrimaryKey(id);
     }
 
@@ -54,7 +59,8 @@ public class CityServiceImpl extends AbstractService<City> implements CityServic
         return cityMapper.selectAll();
     }
 
-    @CacheEvict(key="#p0")  //删除缓存名称为userCache,key等于指定的id对应的缓存
+    //删除缓存名称为 userCache ,key等于指定的id对应的缓存
+    @CacheEvict(key="#p0")
     public void deleteById(String id){
         cityMapper.deleteByPrimaryKey(id);
     }

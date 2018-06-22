@@ -47,7 +47,7 @@ public class CityController {
 
     @PostMapping("/item")
     public Result item(@RequestBody IdVo idVo) {
-        City city = cityService.findById(idVo.getId());
+        City city = cityService.find(idVo.getId());
         return ResultGenerator.genSuccessResult(city);
     }
 

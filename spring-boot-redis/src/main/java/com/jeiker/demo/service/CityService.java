@@ -16,7 +16,7 @@ public interface CityService extends Service<City> {
 
     City updateCity(City city);
 
-    City findById(String id);
+    City find(Integer id);
 
     List<City> findAll();
 
