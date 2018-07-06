@@ -1,6 +1,8 @@
 package com.jeiker.demo.service;
 
+import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,10 +18,13 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class CityServiceTest {
 
+    /**
+     * 方式1.代理类工厂的方式,需要拿到对方的接口
+     */
     @Test
     public void sayHello() {
         // 接口地址
-        String address = "http://localhost:8080/demo/api?wsdl";
+        String address = "http://localhost:8080/demo/hello?wsdl";
         // 代理工厂
         JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
         // 设置代理地址
@@ -31,8 +36,30 @@ public class CityServiceTest {
         // 数据准备
         String userName = "xiao";
         // 调用代理接口的方法调用并返回结果
-        String result = cs.sayHello(userName);
+        String result = cs.sayHi(userName);
         System.out.println("返回结果:" + result);
         assertEquals(result, "xiao hello");
+    }
+
+    /**
+     * 动态调用
+     */
+    @Test
+    public void sayHello2() {
+// 创建动态客户端
+        JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+        Client client = dcf.createClient("http://localhost:8080/demo/hello?wsdl");
+        // 需要密码的情况需要加上用户名和密码
+        // client.getOutInterceptors().add(new ClientLoginInterceptor(USER_NAME,
+        // PASS_WORD));
+        Object[] objects = new Object[0];
+        try {
+            // invoke("方法名",参数1,参数2,参数3....);
+            objects = client.invoke("sayHello", "xiao");
+            System.out.println("返回数据:" + objects[0]);
+        } catch (java.lang.Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

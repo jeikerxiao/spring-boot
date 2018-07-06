@@ -14,6 +14,6 @@ import javax.jws.WebService;
 @WebService
 public interface CityService {
 
-    String sayHello(String user);
+    String sayHi(String user);
 
 }
